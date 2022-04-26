@@ -3,10 +3,9 @@
  */
 package com.mitienda.clientes.dao;
 
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
+import java.util.List;
 
-import com.mitienda.clientes.modell.Cliente;
+import com.mitienda.clientes.model.Cliente;
 
 /**
  * @author Edgar Chimarro
@@ -14,7 +13,7 @@ import com.mitienda.clientes.modell.Cliente;
  */
 public interface IClienteDAO {
 
-    public Page<Cliente> findAll(Pageable pageable);
+    public List<Cliente> findAll();
 
     public Cliente findByEmail(String email);
 

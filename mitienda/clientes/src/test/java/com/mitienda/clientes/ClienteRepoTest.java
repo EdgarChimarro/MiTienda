@@ -6,6 +6,7 @@ package com.mitienda.clientes;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -17,7 +18,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.annotation.Rollback;
 
-import com.mitienda.clientes.modell.Cliente;
+import com.mitienda.clientes.model.Cliente;
 import com.mitienda.clientes.service.IClienteRepo;
 
 import junit.framework.Assert;
@@ -65,7 +66,7 @@ public class ClienteRepoTest {
 
     /**
      * Test method for
-     * {@link com.mitienda.clientes.impl.ClienteDAOImpl#save(com.mitienda.clientes.modell.Cliente)}.
+     * {@link com.mitienda.clientes.impl.ClienteDAOImpl#save(com.mitienda.clientes.model.Cliente)}.
      */
     @Test
     public void testSave() {
@@ -73,7 +74,7 @@ public class ClienteRepoTest {
 	Cliente nuevoCliente = new Cliente();
 	nuevoCliente.setNombres("Edgar I");
 	nuevoCliente.setApellidos("Chimarro");
-	nuevoCliente.setFechaRegistro(LocalDateTime.now());
+	nuevoCliente.setFechaNacimiento(LocalDate.now());
 	nuevoCliente.setEmail("edgarchimarro@gmail.com");
 	nuevoCliente.setGenero("Masculino");
 	nuevoCliente.setNumeroTelefono("22366304");

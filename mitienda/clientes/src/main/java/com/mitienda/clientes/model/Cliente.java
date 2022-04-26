@@ -1,8 +1,9 @@
 /**
  * 
  */
-package com.mitienda.clientes.modell;
+package com.mitienda.clientes.model;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import javax.persistence.Column;
@@ -13,7 +14,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 import lombok.Data;
 
@@ -37,14 +37,17 @@ public class Cliente {
     @Column(nullable = false)
     private String nombres;
 
+    @Column(nullable = false)
     private String apellidos;
 
-    @Column(nullable = false)
-    @DateTimeFormat(iso = ISO.DATE)
-    private LocalDateTime fechaRegistro;
+    
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate fechaNacimiento;
 
+    @Column(nullable = false, length = 10)
     private String genero;
 
+    @Column(nullable = false)
     private String numeroTelefono;
 
     public Long getId() {
@@ -79,12 +82,12 @@ public class Cliente {
 	this.apellidos = apellidos;
     }
 
-    public LocalDateTime getFechaRegistro() {
-	return fechaRegistro;
+    public LocalDate getFechaNacimiento() {
+	return fechaNacimiento;
     }
 
-    public void setFechaRegistro(LocalDateTime fechaRegistro) {
-	this.fechaRegistro = fechaRegistro;
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {
+	this.fechaNacimiento = fechaNacimiento;
     }
 
     public String getGenero() {
