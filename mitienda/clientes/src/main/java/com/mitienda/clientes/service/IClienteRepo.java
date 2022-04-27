@@ -15,8 +15,6 @@ import com.mitienda.clientes.model.Cliente;
 @Repository
 public interface IClienteRepo extends JpaRepository<Cliente, Long> {
 
-    // @Query(nativeQuery = true, value = "SELECT * FROM usuarios where email =
-    // :email")
-    // Usuario buscarPorEmail(@Param("email") String email);
     public Cliente findByEmail(String email);
+
 }

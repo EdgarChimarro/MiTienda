@@ -11,8 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -34,18 +33,15 @@ public class Cliente {
     private Long id;
 
     @NotNull
-    @Min(5)
-    @Max(50)
+    @Email
     @Column(nullable = false, unique = true)
     private String email;
 
     @Column(nullable = false)
     @NotNull
-    @Min(2)
     private String nombres;
 
     @NotNull
-    @Min(5)
     @Column(nullable = false)
     private String apellidos;
 
@@ -54,13 +50,10 @@ public class Cliente {
     private LocalDate fechaNacimiento;
 
     @NotNull
-    @Min(1)
-    @Max(30)
     @Column(nullable = false, length = 10)
     private String genero;
 
     @NotNull
-    @Min(5)
     @Column(nullable = false)
     private String numeroTelefono;
 

@@ -16,21 +16,22 @@
 
 	<h2>Lista Clientes</h2>
 	<table class="table table-hover mt-5">
+	<caption>Lista de Clientes</caption>
 		<thead>
 			<tr>
-				<td>ID</td>
-				<td>NOMBRES</td>
-				<td>APELLIDOS</td>
-				<td>FECHA DE NACIMIENTO</td>
-				<td>GENERO</td>
-				<td>NUMERO TELEFONO</td>
-				<td>CORREO ELECTRONICO</td>
+				<th scope="col">ID</th>
+				<th scope="col">NOMBRES</th>
+				<th scope="col">APELLIDOS</th>
+				<th scope="col">FECHA DE NACIMIENTO</th>
+				<th scope="col">GENERO</th>
+				<th scope="col">NUMERO TELEFONO</th>
+				<th scope="col">CORREO ELECTRONICO</th>
 				<td></td>
 			</tr>
 		</thead>
 		<tbody>
 			<tr th:each="cliente : ${clientes}">
-				<td th:text="${cliente.i}"></td>
+				<td th:text="${cliente.id}"></td>
 				<td th:text="${cliente.nombres}"></td>
 				<td th:text="${cliente.apellidos}"></td>
 				<td
@@ -39,7 +40,12 @@
 				<td th:text="${cliente.numeroTelefono}"></td>
 				<td th:text="${cliente.email}"></td>
 				
-				<td></td>
+				<td>
+				<a th:href="@{/editar/}+${cliente.id}" class="btn btn-warning">Editar</a>
+				<a th:href="@{/eliminar/}+${cliente.id}"  class="btn btn-danger">Eliminar</a>
+				
+				
+				</td>
 			</tr>
 
 		</tbody>

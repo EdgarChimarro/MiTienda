@@ -3,7 +3,7 @@
  */
 package com.mitienda.clientes.impl;
 
-import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -28,8 +28,8 @@ public class ClienteDAOImpl implements IClienteDAO {
     private IClienteRepo clienteRepo;
 
     @Override
-    public List<Cliente> findAll() {
-	return clienteRepo.findAll();
+    public Page<Cliente> findAll(Pageable pageable) {
+	return clienteRepo.findAll(pageable);
     }
 
     @Override
@@ -45,6 +45,11 @@ public class ClienteDAOImpl implements IClienteDAO {
     @Override
     public void deleteById(Long id) {
 	clienteRepo.deleteById(id);
+    }
+
+    @Override
+    public Optional<Cliente> findById(Long id) {
+	return clienteRepo.findById(id);
     }
 
 }
