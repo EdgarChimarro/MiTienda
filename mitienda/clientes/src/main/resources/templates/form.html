@@ -13,6 +13,7 @@
 	<div class="row justify-content-center">
 		<div class="col-md-5 col-lg-4">
 			<h3>Nuevo Cliente</h3>
+<<<<<<< HEAD
 			<form th:action="@{/guardar}" method="post" th:object="${clientes}">
 				<div class="mb-2">
 					<input type="hidden" th:field="*{id}"> <label for="nombre">NOMBRES</label>
@@ -23,10 +24,22 @@
 					<label for="apellidos">APELLIDOS</label> <input id="apellidos"
 						type="text" th:field="*{apellidos}" placeholder="Apellidos del cliente"
 						class="form-control" required>
+=======
+			<form action="" method="post" th:object="${clientes}">
+				<div class="mb-2">
+					<label for="nombre">NOMBRES</label> <input id="nombre" type="text"
+						th:field="*{nombres}" placeholder="login" class="form-control">
+				</div>
+				<div class="mb-2">
+					<label for="apellidos">APELLIDOS</label> <input id="apellidos"
+						type="text" th:field="*{apellidos}" placeholder="string"
+						class="form-control">
+>>>>>>> aadd7e38a4ba73689f1620d3bf7ddc1286c13749
 				</div>
 				<div class="mb-2">
 					<label for="fechaNacimiento">FECHA DE NACIMIENTO</label> <input
 						id="fechaNacimiento" type="date" th:field="*{fechaNacimiento}"
+<<<<<<< HEAD
 						class="form-control" required>
 				</div>
 				<div class="mb-2">
@@ -41,19 +54,41 @@
 					<label for="telefono">TELEFONO</label> <input id="telefono"
 						type="text" th:field="*{numeroTelefono}"
 						placeholder="Numero de Telefono" class="form-control" required=>
+=======
+						class="form-control">
+				</div>
+				<div class="mb-2">
+					<label for="genero">GENERO</label> <br /> 
+					<input type="radio" th:field="*{genero}" name="genero" value="Femenino">Femenino 
+             		<input type="radio" th:field="*{genero}" name="genero" value="Masculino">Masculino<br />
+				</div>
+				<div class="mb-2">
+					<label for="telefono">TELEFONO</label> <input id="telefono"
+						type="text" th:field="*{numeroTelefono}" placeholder="phone number"
+						class="form-control">
+>>>>>>> aadd7e38a4ba73689f1620d3bf7ddc1286c13749
 				</div>
 
 				<div class="mb-2">
 					<label for="email">EMAIL</label> <input id="email" type="email"
+<<<<<<< HEAD
 						th:field="*{email}" class="form-control" required maxlength="18"
 						placeholder="E-Mail">
+=======
+						th:field="*{email}" class="form-control"
+						required maxlength="18" placeholder="E-Mail">
+>>>>>>> aadd7e38a4ba73689f1620d3bf7ddc1286c13749
 				</div>
 
 
 				<div class="text-end">
 					<a href="/" class="btn btn-light">Volver</a>
+<<<<<<< HEAD
 					<button type="submit" class="btn btn-primary">Guardar
 						Cliente</button>
+=======
+					<button class="btn btn-primary">Guardar Cliente</button>
+>>>>>>> aadd7e38a4ba73689f1620d3bf7ddc1286c13749
 				</div>
 
 			</form>
